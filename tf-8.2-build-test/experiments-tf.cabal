@@ -1,0 +1,48 @@
+-- This file has been generated from package.yaml by hpack version 0.18.1.
+--
+-- see: https://github.com/sol/hpack
+
+name:           experiments-tf
+version:        0.0.0.0
+build-type:     Simple
+cabal-version:  >= 1.10
+
+library
+  hs-source-dirs:
+      src
+  default-extensions: BangPatterns LambdaCase OverloadedStrings ViewPatterns
+  ghc-options: -Wall
+  build-depends:
+      base
+    , tensorflow
+  other-modules:
+      Paths_experiments_tf
+  default-language: Haskell2010
+
+test-suite doctest
+  type: exitcode-stdio-1.0
+  main-is: DocTest.hs
+  hs-source-dirs:
+      test
+  default-extensions: BangPatterns LambdaCase OverloadedStrings ViewPatterns
+  ghc-options: -Wall
+  build-depends:
+      base
+    , tensorflow
+    , experiments
+    , doctest
+  default-language: Haskell2010
+
+test-suite spec
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  hs-source-dirs:
+      test
+  default-extensions: BangPatterns LambdaCase OverloadedStrings ViewPatterns
+  ghc-options: -Wall
+  build-depends:
+      base
+    , tensorflow
+    , experiments
+    , hspec
+  default-language: Haskell2010
