@@ -8,13 +8,12 @@ import Html.App
 -- MODEL
 
 
-type alias Model =
-    String
+type alias Model = {...}
 
 
-initModel : ( Model, Cmd Msg )
-initModel =
-    ( "Hello World", Cmd.none )
+-- initModel : ( Model, Cmd Msg )
+-- initModel =
+--     ( "Hello World", Cmd.none )
 
 
 
@@ -23,6 +22,8 @@ initModel =
 
 type Msg
     = NoOp
+    | Reset
+    | ...
 
 
 
@@ -31,8 +32,9 @@ type Msg
 
 view : Model -> Html Msg
 view model =
-    div []
-        [ text model ]
+  ...
+    -- div []
+    --     [ text model ]
 
 
 
@@ -42,8 +44,8 @@ view model =
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        NoOp ->
-            ( model, Cmd.none )
+        NoOp -> ...
+        Reset -> ...
 
 
 
