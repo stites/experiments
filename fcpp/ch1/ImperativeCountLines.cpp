@@ -4,7 +4,6 @@
 #include <fstream>
 #include "myprint.hpp"
 #include <algorithm>
-#include <functional>
 
 using namespace std;
 /* namespace fs = boost::filesystem; */
@@ -25,12 +24,6 @@ vector<int> count_lines_in_files(const vector<string>& files)
     results.push_back(line_count);
   }
   return results;
-}
-
-template <typename T>
-void run_listing(const string& section, const string& title, function<T()> runnable){
-  cout << "Listing " << section << ", " << title << ":" << endl;
-  cout << runnable() << endl;
 }
 
 void run_listing1(const vector<string>& files)
