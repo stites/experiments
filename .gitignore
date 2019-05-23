@@ -141,3 +141,4 @@ flycheck_*.el
 
 # projectiles files
 .projectile
+a.out
