@@ -1,5 +1,9 @@
 with (import <nixpkgs> {});
 
+let
+  fpcpp-ch1 = callPackage ./ch1 {};
+  ranges-v3 = callPackage ./ch1/ranges-v3.nix {};
+in
 mkShell {
-  buildInputs = [ llvmPackages_7.clang boost ];
+  buildInputs = [ fpcpp-ch1 ranges-v3 ];
 }

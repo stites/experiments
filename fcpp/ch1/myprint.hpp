@@ -8,18 +8,26 @@ using namespace std;
 template <typename T>
 ostream& operator<<(ostream& os, const vector<T>& v)
 {
+  if (empty(v)) {
+    os << "[]";
+  } else {
     os << "[";
     for (auto const& i: v) {
       os << i << ", ";
     }
-    os << (empty(v) ? "" : "\b\b") << "]";
-    return os;
+    os << "\b\b" << "]";
+  }
+  return os;
 }
 
-template <typename T>
-void run_listing(const string& section, const string& title, function<T()> runnable){
-  cout << "Listing " << section << ", " << title << ":" << endl;
-  cout << runnable() << endl;
+
+void run_listing1(
+    const string& subsection,
+    const string& title,
+    const vector<std::string>& files,
+    function<vector<int>(const vector<std::string>&)> runnable){
+  cout << "Listing 1." << subsection << ", " << title << ":" << endl;
+  cout << runnable(files) << endl;
 }
 
 
